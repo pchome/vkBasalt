@@ -13,7 +13,7 @@
 #include "image.hpp"
 #include "lut_cube.hpp"
 
-#include "stb_image.h"
+#include <stb/stb_image.h>
 
 #include "shader_sources.hpp"
 
