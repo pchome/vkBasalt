@@ -78,46 +78,46 @@ namespace vkBasalt
     }
 
     void
-    convertReshadeFilter(const reshadefx::texture_filter& textureFilter, VkFilter& minFilter, VkFilter& magFilter, VkSamplerMipmapMode& mipmapMode)
+    convertReshadeFilter(const reshadefx::filter_mode& textureFilter, VkFilter& minFilter, VkFilter& magFilter, VkSamplerMipmapMode& mipmapMode)
     {
         switch (textureFilter)
         {
-            case reshadefx::texture_filter::min_mag_mip_point:
+            case reshadefx::filter_mode::min_mag_mip_point:
                 minFilter  = VK_FILTER_NEAREST;
                 magFilter  = VK_FILTER_NEAREST;
                 mipmapMode = VK_SAMPLER_MIPMAP_MODE_NEAREST;
                 return;
-            case reshadefx::texture_filter::min_mag_point_mip_linear:
+            case reshadefx::filter_mode::min_mag_point_mip_linear:
                 minFilter  = VK_FILTER_NEAREST;
                 magFilter  = VK_FILTER_NEAREST;
                 mipmapMode = VK_SAMPLER_MIPMAP_MODE_LINEAR;
                 return;
-            case reshadefx::texture_filter::min_point_mag_linear_mip_point:
+            case reshadefx::filter_mode::min_point_mag_linear_mip_point:
                 minFilter  = VK_FILTER_NEAREST;
                 magFilter  = VK_FILTER_LINEAR;
                 mipmapMode = VK_SAMPLER_MIPMAP_MODE_NEAREST;
                 return;
-            case reshadefx::texture_filter::min_point_mag_mip_linear:
+            case reshadefx::filter_mode::min_point_mag_mip_linear:
                 minFilter  = VK_FILTER_NEAREST;
                 magFilter  = VK_FILTER_LINEAR;
                 mipmapMode = VK_SAMPLER_MIPMAP_MODE_LINEAR;
                 return;
-            case reshadefx::texture_filter::min_linear_mag_mip_point:
+            case reshadefx::filter_mode::min_linear_mag_mip_point:
                 minFilter  = VK_FILTER_LINEAR;
                 magFilter  = VK_FILTER_NEAREST;
                 mipmapMode = VK_SAMPLER_MIPMAP_MODE_NEAREST;
                 return;
-            case reshadefx::texture_filter::min_linear_mag_point_mip_linear:
+            case reshadefx::filter_mode::min_linear_mag_point_mip_linear:
                 minFilter  = VK_FILTER_LINEAR;
                 magFilter  = VK_FILTER_NEAREST;
                 mipmapMode = VK_SAMPLER_MIPMAP_MODE_LINEAR;
                 return;
-            case reshadefx::texture_filter::min_mag_linear_mip_point:
+            case reshadefx::filter_mode::min_mag_linear_mip_point:
                 minFilter  = VK_FILTER_LINEAR;
                 magFilter  = VK_FILTER_LINEAR;
                 mipmapMode = VK_SAMPLER_MIPMAP_MODE_NEAREST;
                 return;
-            case reshadefx::texture_filter::min_mag_mip_linear:
+            case reshadefx::filter_mode::min_mag_mip_linear:
                 minFilter  = VK_FILTER_LINEAR;
                 magFilter  = VK_FILTER_LINEAR;
                 mipmapMode = VK_SAMPLER_MIPMAP_MODE_LINEAR;

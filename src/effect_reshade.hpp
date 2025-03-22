@@ -103,7 +103,7 @@ namespace vkBasalt
         VkCompareOp   convertReshadeCompareOp(reshadefx::pass_stencil_func compareOp);
         VkStencilOp   convertReshadeStencilOp(reshadefx::pass_stencil_op stencilOp);
         VkBlendOp     convertReshadeBlendOp(reshadefx::pass_blend_op blendOp);
-        VkBlendFactor convertReshadeBlendFactor(reshadefx::pass_blend_func blendFactor);
+        VkBlendFactor convertReshadeBlendFactor(reshadefx::pass_blend_factor blendFactor);
     };
 } // namespace vkBasalt
 

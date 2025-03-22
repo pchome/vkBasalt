@@ -1,5 +1,5 @@
 subdir('shader')
-subdir('reshade')
+reshade_dep = dependency('ReShadeFX')
 
 vkBasalt_src = [
     'basalt.cpp',
@@ -51,7 +51,7 @@ configure_file(output: 'config_paths.hpp',
 # which conflicts with the rest codebase with with Meson --unity=on option
 keyboard_input_x11_lib = static_library('keyboard_input_x11', 'keyboard_input_x11.cpp')
 
-shared_library(meson.project_name().to_lower(), 
+shared_library(meson.project_name().to_lower(),
     vkBasalt_src, shader_include,
     link_with: [keyboard_input_x11_lib],
     include_directories : vkBasalt_include_path,
