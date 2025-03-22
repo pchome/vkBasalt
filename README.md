@@ -1,4 +1,4 @@
-# vkBasalt
+# VulkanFX (fork of vkBasalt with some spices)
 vkBasalt is a Vulkan post processing layer to enhance the visual graphics of games.
 
 Currently, the build in effects are:
