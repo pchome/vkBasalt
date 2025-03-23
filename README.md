@@ -25,7 +25,7 @@ Before building, you will need:
 
 ### Building
 
-**These instructions use `--prefix=/usr`, which is generally not recommened since vkBasalt will be installed in directories that are meant for the package manager. The alternative is not setting the prefix, it will then be installed in `/usr/local`. But you need to make sure that `ld` finds the library since /usr/local is very likely not in the default path.** 
+**These instructions use `--prefix=/usr`, which is generally not recommened since vkBasalt will be installed in directories that are meant for the package manager. The alternative is not setting the prefix, it will then be installed in `/usr/local`. But you need to make sure that `ld` finds the library since /usr/local is very likely not in the default path.**
 
 In general, prefer using distro provided packages.
 
@@ -65,6 +65,26 @@ When using the terminal or an application (.desktop) file, execute:
 ENABLE_VKBASALT=1 yourgame
 ```
 
+### Testing
+##### Get some ReShadeFX shaders
+`$ git clone https://github.com/crosire/reshade-shaders /tmp/fxs`
+##### Launch an vulkan application
+`$ ENABLE_VKBASALT=1 VKBASALT_CONFIG='effects=fxaa:cas:dlt;casSharpness=1.0;dlt=/tmp/fxs/Shaders/Daltonize.fx;reshadeTexturePath=/tmp/fxs/Textures;reshadeIncludePath=/tmp/fxs/Shaders' vkgears`
+##### Expected output
+```js
+vkBasalt err:   no good config file
+vkBasalt info:  config string: effects=fxaa:cas:dlt;casSharpness=1.0;dlt=/tmp/fxs/Shaders/Daltonize.fx;reshadeTexturePath=/tmp/fxs/Textures;reshadeIncludePath=/tmp/fxs/Shaders
+vkBasalt info:  effects = fxaa:cas:dlt
+vkBasalt info:  casSharpness = 1.0
+vkBasalt info:  dlt = /tmp/fxs/Shaders/Daltonize.fx
+vkBasalt info:  reshadeTexturePath = /tmp/fxs/Textures
+vkBasalt info:  reshadeIncludePath = /tmp/fxs/Shaders
+304 frames in 5.0 seconds = 60.779 FPS
+301 frames in 5.0 seconds = 60.002 FPS
+300 frames in 5.0 seconds = 59.999 FPS
+...
+```
+
 ### Lutris
 With Lutris, follow these steps below:
 1. Right click on a game, and press `configure`.
@@ -74,7 +94,7 @@ With Lutris, follow these steps below:
 ### Steam
 With Steam, edit your launch options and add:
 ```ini
-ENABLE_VKBASALT=1 %command% 
+ENABLE_VKBASALT=1 %command%
 ```
 
 ## Configure
